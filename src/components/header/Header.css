@@ -1,0 +1,31 @@
+.H {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    height: 4rem;
+    /* background-color: aqua; */
+}
+
+.brand {
+    letter-spacing: 10px;
+    font-weight: 100;
+}
+
+.H_icons {
+    display: flex;
+    /* background-color: aqua; */
+    width: 12rem;
+    justify-content: space-between;
+
+}
+
+.H_menu div {
+    display: flex;
+    justify-content: center;
+    gap: 3.4rem;
+}
+
+.H_menu div li {
+    list-style: none;
+}

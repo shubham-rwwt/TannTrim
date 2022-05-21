@@ -1,0 +1,105 @@
+* {
+    text-decoration: none;
+    color: rgb(227, 227, 227);
+}
+
+.mainBody_container {
+    margin-top: 45px;
+    padding: 0 4rem;
+}
+
+/* .mainBody_fchild {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+} */
+
+.mainBody_fchild div {
+    align-items: center;
+    font-size: 18px;
+
+}
+
+
+
+.products {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+
+}
+
+.card {
+    width: 18rem;
+    height: fit-content;
+    margin-bottom: 50px;
+}
+
+.images {
+    width: 18rem;
+    height: 26.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+
+}
+
+.images .productBookmark {
+
+    width: 30px;
+    height: fit-content;
+    position: absolute;
+    top: 13px;
+    left: 15.2rem;
+    z-index: 1;
+}
+
+.images .productImg {
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: all 0.4s ease-in-out;
+}
+
+.images .productImg:hover {
+    transform: scale(1.1);
+}
+
+.name {
+    font-size: 20px;
+    padding: 14px 0;
+}
+
+.productInfo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+
+}
+
+.price {
+    margin-top: 14px;
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+}
+
+.special_price {
+    font-size: 1.4rem;
+}
+
+.exactprice {
+    /* line-height: ; */
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    color: rgb(110, 110, 110);
+}
+
+.inr_discount {
+    color: rgb(0, 204, 7);
+    font-size: 0.8rem;
+}
