@@ -2,10 +2,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../../components/header/Header'
+import spinner from '../../icons/spinner.gif'
 import './ProductDetail.css'
 
 const ProductDetail = () => {
   const [product, setProduct] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   const { id } = useParams()
   const fetchSingleProduct = async () => {
     await axios
@@ -18,13 +20,24 @@ const ProductDetail = () => {
         )
         // console.log(id)
         setProduct(singleProduct)
+        setIsLoading(false)
       })
   }
   // console.log(product.id)
 
   useEffect(() => {
-    fetchSingleProduct()
+    setTimeout(() => {
+      fetchSingleProduct()
+    }, 500)
   }, [])
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <img src={spinner} alt="" />
+      </div>
+    )
+  }
 
   return (
     <main>

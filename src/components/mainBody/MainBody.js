@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import addToCart from '../../icons/addToCart.svg'
 import productBookmark from '../../icons/productBookmark.svg'
+import spinner from '../../icons/spinner.gif'
 import './MainBody.css'
 
 const MainBody = () => {
   const [product, setProduct] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const fetchData = async () => {
+    setIsLoading(false)
     return await axios
       .get(
         `https://api.tjori.com/api/v7filters/na/women-all-products/?f_page=1&format=json`,
@@ -17,13 +20,22 @@ const MainBody = () => {
   }
 
   useEffect(() => {
-    fetchData().then((result) => setProduct(result.data.products))
+    setTimeout(() => {
+      fetchData().then((result) => setProduct(result.data.products))
+    }, 700)
   }, [])
+
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <img src={spinner} alt="" />
+      </div>
+    )
+  }
 
   return (
     <main className="mainBody_container">
       <div className="mainBody_fchild">
-        <div></div>
         <p>products</p>
       </div>
       <div className="products">
