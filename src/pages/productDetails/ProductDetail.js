@@ -20,7 +20,7 @@ const ProductDetail = () => {
         setProduct(singleProduct)
       })
   }
-  console.log(product.id)
+  // console.log(product.id)
 
   useEffect(() => {
     fetchSingleProduct()
@@ -43,9 +43,54 @@ const ProductDetail = () => {
         </div>
 
         <div className="singleProdInfo">
-          <h3>{product.name}</h3>
+          <p>{product.name}</p>
+          <div className="price">
+            <p className="special_price">Rs {product.special_price}.00</p>
+            {product.price === product.special_price ? (
+              <p></p>
+            ) : (
+              <p className="exactprice">Rs {product.price}</p>
+            )}
+            {product.inr_discount === 0 ? (
+              <p></p>
+            ) : (
+              <p className="inr_discount"> ({product.inr_discount}% off)</p>
+            )}
+          </div>
+
+          <div className="sizeChart">
+            <p>SIZE CHART</p>
+          </div>
+
+          <div className="chart">
+            <div>
+              <p>{product.sizes[0] === '' ? <p>NAN</p> : product.sizes[0]}</p>
+            </div>
+            <div>
+              <p>{product.sizes[1] === '' ? <p>NAN</p> : product.sizes[1]}</p>
+            </div>
+            <div>
+              <p>{product.sizes[2] === '' ? <p>NAN</p> : product.sizes[2]}</p>
+            </div>
+            <div>
+              <p>{product.sizes[3] === '' ? <p>NAN</p> : product.sizes[3]}</p>
+            </div>
+            <div>
+              <p>{product.sizes[4] === '' ? <p>NAN</p> : product.sizes[4]}</p>
+            </div>
+            <div>
+              <p>{product.sizes[5] === '' ? <p>NAN</p> : product.sizes[5]}</p>
+            </div>
+            <div>
+              <p>{product.sizes[6] === '' ? <p>NAN</p> : product.sizes[6]}</p>
+            </div>
+          </div>
+
+          <button className="addToBag">Add to Bag</button>
         </div>
       </div>
+
+      {/* <div className="reviews">{product.reviews[0]}</div> */}
     </main>
   )
 }

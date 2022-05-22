@@ -43,3 +43,46 @@
 .singleProdInfo {
     margin-left: 1rem;
 }
+
+
+
+.chart {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 2rem;
+
+}
+
+.sizeChart {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.sizeChart p {
+
+    font-size: 13px;
+}
+
+.chart div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(170, 170, 170);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.chart p {
+    font-size: 12px;
+}
+
+
+.addToBag {
+    margin-top: 45px;
+    width: 31.7rem;
+    height: 4rem;
+    font-size: 23px;
+    background-color: rgb(0, 102, 0);
+    border-radius: 4px;
+}
